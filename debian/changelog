@@ -1,0 +1,96 @@
+kicad (0.0.20100314-1build0.1) maverick-proposed; urgency=low
+
+  * No-change upload to rebuild against current wxwidgets2.8, which
+    involuntarily changed ABI due to a binutils change (see Debian #540060 for
+    details). (LP: #610975)
+
+ -- Stefano Rivera <stefanor@ubuntu.com>  Sun, 17 Oct 2010 12:59:49 +0200
+
+kicad (0.0.20100314-1) unstable; urgency=low
+
+  * New upstream (Closes: #575018).
+  * Update Standards-Version to 3.8.4 (no changes needed).
+
+ -- Richard Antony Burton <richardaburton@gmail.com>  Sun, 28 Mar 2010 12:58:23 +0000
+
+kicad (0.0.20090216-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #529628)
+  *  - Upstream fix. (Closes: #532367)
+  *  - Upstream fix. (Closes: #509956)
+  * Move shortcut to electronics section. (Closes: #536307)
+  * Suggest documentation. (Closes: #502546)
+  * Update Standards-Version to 3.8.3 (no changes needed).
+
+ -- Richard Antony Burton <richardaburton@gmail.com>  Sat, 26 Sep 2009 12:47:27 +0000
+
+kicad (0.0.20080825c-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #496897)
+  * Use new cmake build system.
+  * Use new svn repository layout.
+  * Build using wxWidgets 2.8. (Closes: #398615)
+  * Require debhelper 6 to get fix for 459426.
+  * Upstream performance improvement for redraw. (Closes: #469516)
+  * Moved examples to /usr/share/doc/kicad/demos
+  * Update Standards-Version to 3.8.0 (no changes needed).
+  * Add more language packages, for tutorials.
+  * Only en & fr manuals included, rest not currently maintained upstream.
+
+ -- Richard Antony Burton <richardaburton@gmail.com>  Sun, 21 Sep 2008 19:58:47 +0100
+
+kicad (0.0.20071129a-1) unstable; urgency=low
+
+  * New upstream release.
+  * Fix menu icon (not the gnome one).
+  * Update Standards-Version to 3.7.3.0 (Debian menu structure change only).
+
+ -- Richard Antony Burton <richardaburton@gmail.com>  Wed, 19 Dec 2007 17:04:33 +0000
+
+kicad (0.0.20070702-1) unstable; urgency=low
+
+  * New upstream release.
+  * Added man pages for binaries. (Closes: #429223)
+  * All patches from previous version now included upstream.
+
+ -- Richard Antony Burton <richardaburton@gmail.com>  Sun, 08 Jul 2007 09:15:42 +0100
+
+kicad (0.0.20070525-1) unstable; urgency=low
+
+  * New upstream release (Closes: #423873)
+  * Install help files to correct location (Closes: #404783)
+  * For languages without native help files the English doc package is pulled in
+    with the non-English doc package, so there is at least some help.
+  * Not removing all binaries removed during 'clean' (Closes: #424455)
+  * Patch for the 3D Display image export problem (Closes: #423882)
+
+ -- Richard Antony Burton <richardaburton@gmail.com>  Sun, 27 May 2007 13:43:01 +0100
+
+kicad (0.0.20060829-2) unstable; urgency=low
+
+  * Fixing wrong location of helpfiles (Closes: #404783) (djp)
+
+ -- Daniel J. Priem <danielpriem@flexserv.de>  Thu, 28 Dec 2006 12:20:31 +0100
+
+kicad (0.0.20060829-1) unstable; urgency=low
+
+  * now binNMU safe (rab)
+  * This version is 20060828 but since i forgot something inside the orig.tar.gz i must increase the version number (djp)
+  * Added newer documentation (djp)
+  * Added some updated po files (djp)
+  * Added italian help files (djp)
+
+ -- Daniel J. Priem <danielpriem@flexserv.de>  Sun, 12 Nov 2006 21:40:23 +0100
+
+kicad (0.0.20060828-1) unstable; urgency=low
+
+  * New upstream.
+  * Split help files out into separate language-specific packages.
+
+ -- Debian Kicad Team <kicad-devel@lists.mose.flexserv.de>  Fri,  3 Nov 2006 19:33:07 +0100
+
+kicad (0.0.20060626-1) unstable; urgency=low
+
+  * Initial release (Closes: #278581)
+
+ -- Richard Antony Burton <richardaburton@hotmail.com>  Sat, 30 Sep 2006 22:24:06 +0200
