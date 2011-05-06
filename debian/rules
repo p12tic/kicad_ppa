@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
 # Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
+export DH_VERBOSE=1
 # Make sure no svn parts inside the deb
 DH_ALWAYS_EXCLUDE=CVS:.svn
 export DH_ALWAYS_EXCLUDE
