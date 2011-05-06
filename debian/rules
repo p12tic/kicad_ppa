@@ -16,7 +16,8 @@ include /usr/share/dpatch/dpatch.make
 
 configure: configure-stamp
 configure-stamp:
-
+	echo "HERE I AM"
+	pwd
 	mkdir -p $(CURDIR)/build/kicad
 	mkdir -p $(CURDIR)/build/bitmaps
 	cd $(CURDIR)/build/kicad && cmake -DKICAD_MINIZIP=0 \
