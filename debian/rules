@@ -18,7 +18,7 @@ configure: configure-stamp
 configure-stamp:
 
 	mkdir -p $(CURDIR)/build/kicad
-	mkdir -p $(CURDIR)/build/bitmaps
+	mkdir -p $(CURDIR)/build/bitmaps_png
 	cd $(CURDIR)/build/kicad && cmake -DKICAD_MINIZIP=0 \
 		-DKICAD_DEMOS=$(CURDIR)/debian/kicad-common/usr/share/doc/kicad/demos ../../kicad \
 		-DKICAD_TESTING_VERSION=ON
