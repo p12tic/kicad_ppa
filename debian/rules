@@ -22,7 +22,6 @@ configure-stamp:
 	cd $(CURDIR)/build/kicad && cmake -DKICAD_MINIZIP=0 \
 		-DKICAD_DEMOS=$(CURDIR)/debian/kicad-common/usr/share/doc/kicad/demos ../../kicad \
 		-DKICAD_TESTING_VERSION=ON
-        make rebuild_cache
 	mkdir -p $(CURDIR)/build/kicad-doc
 	cd $(CURDIR)/build/kicad-doc && cmake ../../kicad-doc
 	mkdir -p $(CURDIR)/build/kicad-library
