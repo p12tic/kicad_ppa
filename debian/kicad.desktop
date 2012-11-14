@@ -2,7 +2,7 @@
 MimeType=text/pro
 Name=KiCad
 Exec=kicad
-Icon=icon_kicad.xpm
+Icon=icon_kicad.png
 Categories=Development;Engineering;Electronics
 Type=Application
 Terminal=false
