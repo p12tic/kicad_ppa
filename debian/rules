@@ -11,9 +11,6 @@ export DH_OPTIONS
 
 # .NOTPARALLEL:
 
-# get patch & unpatch targets for dpatch
-include /usr/share/dpatch/dpatch.make
-
 configure: configure-stamp
 configure-stamp:
 
@@ -21,7 +18,8 @@ configure-stamp:
 	mkdir -p $(CURDIR)/build/bitmaps_png
 	cd $(CURDIR)/build/kicad && cmake \
 		-DKICAD_DEMOS=$(CURDIR)/debian/kicad-common/usr/share/doc/kicad/demos ../../kicad \
-		-DKICAD_TESTING_VERSION=ON
+		-DKICAD_TESTING_VERSION=ON \
+        -LA
 	mkdir -p $(CURDIR)/build/kicad-doc
 	cd $(CURDIR)/build/kicad-doc && cmake ../../kicad-doc
 	mkdir -p $(CURDIR)/build/kicad-library
@@ -31,20 +29,20 @@ configure-stamp:
 build: build-arch build-indep
 
 build-arch: build-arch-stamp
-build-arch-stamp: patch-stamp configure-stamp
+build-arch-stamp: configure-stamp
 
 	$(MAKE) -C $(CURDIR)/build/kicad
 	touch $@
 
 build-indep: build-indep-stamp
-build-indep-stamp: patch-stamp configure-stamp
+build-indep-stamp: configure-stamp
 
 	$(MAKE) -C $(CURDIR)/build/kicad-doc
 	$(MAKE) -C $(CURDIR)/build/kicad-library
 	touch $@
 
-clean: clean-patched clean-build unpatch
-clean-patched:
+clean: clean-build
+
 	dh_testdir
 	dh_testroot
 	rm -f build-arch-stamp build-indep-stamp configure-stamp
@@ -56,8 +54,6 @@ clean-patched:
 
 clean-build:
 	rm -rf $(CURDIR)/build
-
-partclean: clean-patched unpatch
 
 install: install-indep install-arch
 install-indep:
@@ -149,4 +145,4 @@ binary-arch: build-arch install-arch
 	dh_builddeb -s
 
 binary: binary-arch binary-indep
-.PHONY: build clean binary-indep binary-arch binary install install-indep install-arch partclean
+.PHONY: build clean binary-indep binary-arch binary install install-indep install-arch

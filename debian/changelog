@@ -1,3 +1,11 @@
+kicad (0.0.20130404-1) precise; urgency=low
+
+  * New upstream.
+  * Started to clean up the packaging information.
+  * Updated upstream URL.
+
+ -- Adam Wolf <adamwolf@feelslikeburning.com>  Thu, 04 Apr 2013 20:36:17 -0500
+
 kicad (0.0.20101024-1) unstable; urgency=low
 
   * Maintainer change. 

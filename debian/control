@@ -1,11 +1,10 @@
 Source: kicad
 Section: electronics
 Priority: optional
-Maintainer:  Georges Khaznadar <georgesk@ofset.org>
-Uploaders: Richard Antony Burton <richardaburton@gmail.com>, Daniel J. Priem <danielpriem@flexserv.de>
-Build-Depends: debhelper (>= 6), dpatch, libx11-dev, libglu1-mesa-dev, libgl1-mesa-dev, mesa-common-dev, libwxbase2.8-dev, libwxgtk2.8-dev, cmake (>= 2.6.0), bzr, doxygen
-Standards-Version: 3.9.1
-Homepage: http://iut-tice.ujf-grenoble.fr/kicad/
+Maintainer: Adam Wolf <adamwolf@feelslikeburning.com>
+Build-Depends: debhelper (>= 6), libx11-dev, libglu1-mesa-dev, libgl1-mesa-dev, mesa-common-dev, libwxbase2.8-dev, libwxgtk2.8-dev, cmake (>= 2.6.0), bzr, doxygen
+Standards-Version: 3.9.3
+Homepage: http://www.kicad-pcb.org
 
 Package: kicad
 Architecture: any
@@ -104,4 +103,3 @@ Description: Kicad help files (Simplified Chinese)
  .
  This package does not provide a Simplified Chinese translation of the manual,
  only the tutorial. Manual available in the French & English packages only.
-
