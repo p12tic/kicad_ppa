@@ -2,7 +2,7 @@ Source: kicad
 Section: electronics
 Priority: optional
 Maintainer: Adam Wolf <adamwolf@feelslikeburning.com>
-Build-Depends: debhelper (>= 6), bzr, cmake (>= 2.6.0), doxygen, libboost-date-time1.54-dev, libboost-filesystem1.54-dev, libboost-iostreams1.54-dev, libboost-locale1.54-dev, libboost-program-options1.54-dev, libboost-regex1.54-dev, libboost-system1.54-dev, libboost-thread1.54-dev, libbz2-dev, libcairo2-dev, libglu1-mesa-dev, libgl1-mesa-dev, libglew-dev, libx11-dev, libwxbase2.8-dev, libwxgtk2.8-dev, mesa-common-dev, pkg-config
+Build-Depends: debhelper (>= 6), bzr, cmake (>= 2.6.0), doxygen, libbz2-dev, libcairo2-dev, libglu1-mesa-dev, libgl1-mesa-dev, libglew-dev, libx11-dev, libwxbase2.8-dev, libwxgtk2.8-dev, mesa-common-dev, pkg-config
 Standards-Version: 3.9.3
 Homepage: http://www.kicad-pcb.org
 
