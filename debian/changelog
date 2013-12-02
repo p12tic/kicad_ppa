@@ -1,3 +1,9 @@
+kicad (0.20131202-1ppa1) saucy; urgency=low
+
+  * New upstream import
+
+ -- Povilas Kanapickas <povilas@radix.lt>  Mon, 02 Dec 2013 20:36:17 -0500
+
 kicad (0.0.20130404-1) precise; urgency=low
 
   * New upstream.
