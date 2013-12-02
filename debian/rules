@@ -20,10 +20,6 @@ configure-stamp:
 		-DKICAD_DEMOS=$(CURDIR)/debian/kicad-common/usr/share/doc/kicad/demos ../../kicad \
 		-DKICAD_TESTING_VERSION=ON \
         -LA
-	mkdir -p $(CURDIR)/build/kicad-doc
-	cd $(CURDIR)/build/kicad-doc && cmake ../../kicad-doc
-	mkdir -p $(CURDIR)/build/kicad-library
-	cd $(CURDIR)/build/kicad-library && cmake ../../kicad-library
 	touch $@
 
 build: build-arch build-indep
@@ -37,8 +33,6 @@ build-arch-stamp: configure-stamp
 build-indep: build-indep-stamp
 build-indep-stamp: configure-stamp
 
-	$(MAKE) -C $(CURDIR)/build/kicad-doc
-	$(MAKE) -C $(CURDIR)/build/kicad-library
 	touch $@
 
 clean: clean-build
@@ -64,38 +58,7 @@ install-indep:
 	dh_installdocs
 
 	cd $(CURDIR)/build/kicad/demos && cmake -P cmake_install.cmake
-	cd $(CURDIR)/build/kicad-doc/internat && cmake -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-common/usr -P cmake_install.cmake
 	cd $(CURDIR)/build/kicad/template && cmake -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-common/usr -P cmake_install.cmake
-	cd $(CURDIR)/build/kicad-library && cmake -DCOMPONENT=resources -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-common/usr -P cmake_install.cmake
-	cd $(CURDIR)/build/kicad-doc && cmake -DCOMPONENT=file_formats -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-common/usr -P cmake_install.cmake
-	cd $(CURDIR)/build/kicad-doc && cmake -DCOMPONENT=footprints_doc -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-common/usr -P cmake_install.cmake
-
-	cd $(CURDIR)/build/kicad-doc && cmake -DCOMPONENT=doc-de -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-doc-de/usr -P cmake_install.cmake
-	cd $(CURDIR)/build/kicad-doc && cmake -DCOMPONENT=help-de -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-doc-de/usr -P cmake_install.cmake
-
-	cd $(CURDIR)/build/kicad-doc && cmake -DCOMPONENT=doc-en -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-doc-en/usr -P cmake_install.cmake
-	cd $(CURDIR)/build/kicad-doc && cmake -DCOMPONENT=help-en -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-doc-en/usr -P cmake_install.cmake
-
-	cd $(CURDIR)/build/kicad-doc && cmake -DCOMPONENT=doc-es -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-doc-es/usr -P cmake_install.cmake
-	cd $(CURDIR)/build/kicad-doc && cmake -DCOMPONENT=help-es -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-doc-es/usr -P cmake_install.cmake
-
-	cd $(CURDIR)/build/kicad-doc && cmake -DCOMPONENT=doc-fr -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-doc-fr/usr -P cmake_install.cmake
-	cd $(CURDIR)/build/kicad-doc && cmake -DCOMPONENT=help-fr -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-doc-fr/usr -P cmake_install.cmake
-
-	cd $(CURDIR)/build/kicad-doc && cmake -DCOMPONENT=doc-hu -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-doc-hu/usr -P cmake_install.cmake
-	cd $(CURDIR)/build/kicad-doc && cmake -DCOMPONENT=help-hu -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-doc-hu/usr -P cmake_install.cmake
-
-#	cd $(CURDIR)/build/kicad-doc && cmake -DCOMPONENT=doc-it -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-doc-it/usr -P cmake_install.cmake
-#	cd $(CURDIR)/build/kicad-doc && cmake -DCOMPONENT=help-it -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-doc-it/usr -P cmake_install.cmake
-
-	cd $(CURDIR)/build/kicad-doc && cmake -DCOMPONENT=doc-pt -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-doc-pt/usr -P cmake_install.cmake
-	cd $(CURDIR)/build/kicad-doc && cmake -DCOMPONENT=help-pt -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-doc-pt/usr -P cmake_install.cmake
-
-	cd $(CURDIR)/build/kicad-doc && cmake -DCOMPONENT=doc-ru -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-doc-ru/usr -P cmake_install.cmake
-	cd $(CURDIR)/build/kicad-doc && cmake -DCOMPONENT=help-ru -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-doc-ru/usr -P cmake_install.cmake
-
-	cd $(CURDIR)/build/kicad-doc && cmake -DCOMPONENT=doc-zh_CN -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-doc-zh-cn/usr -P cmake_install.cmake
-	cd $(CURDIR)/build/kicad-doc && cmake -DCOMPONENT=help-zh_CN -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/kicad-doc-zh-cn/usr -P cmake_install.cmake
 
 install-arch:
 	dh_testdir
