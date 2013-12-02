@@ -17,7 +17,7 @@ configure-stamp:
 	mkdir -p $(CURDIR)/build/kicad
 	mkdir -p $(CURDIR)/build/bitmaps_png
 	cd $(CURDIR)/build/kicad && cmake \
-		-DKICAD_DEMOS=$(CURDIR)/debian/kicad-common/usr/share/doc/kicad/demos ../../kicad \
+		-DKICAD_DEMOS=$(CURDIR)/debian/kicad-common/usr/share/doc/kicad/demos ../.. \
 		-DKICAD_TESTING_VERSION=ON \
         -LA
 	touch $@
@@ -27,7 +27,7 @@ build: build-arch build-indep
 build-arch: build-arch-stamp
 build-arch-stamp: configure-stamp
 
-	$(MAKE) -C $(CURDIR)/build/kicad
+	$(MAKE) VERBOSE=1 -C $(CURDIR)/build/kicad
 	touch $@
 
 build-indep: build-indep-stamp
@@ -40,7 +40,7 @@ clean: clean-build
 	dh_testdir
 	dh_testroot
 	rm -f build-arch-stamp build-indep-stamp configure-stamp
-	# REMOVE AUTOMATICALLY GENERATED FILES	
+	# REMOVE AUTOMATICALLY GENERATED FILES
 	rm -f kicad/pcbnew/dialog_freeroute_exchange_help_html.h \
 	      kicad/eeschema/cmp_library_base.h \
 	      kicad/eeschema/cmp_library_base.cpp
@@ -53,7 +53,7 @@ install: install-indep install-arch
 install-indep:
 	dh_testdir
 	dh_testroot
-	dh_clean -k -i 
+	dh_clean -k -i
 	dh_installdirs -i
 	dh_installdocs
 
@@ -63,7 +63,7 @@ install-indep:
 install-arch:
 	dh_testdir
 	dh_testroot
-	dh_clean -k -s 
+	dh_clean -k -s
 	dh_installdirs -s
 	dh_installmenu -s
 
@@ -94,7 +94,7 @@ binary-indep: build-indep install-indep
 binary-arch: build-arch install-arch
 	dh_testdir
 	dh_testroot
-	dh_installchangelogs -s kicad/CHANGELOG.txt
+	dh_installchangelogs -s CHANGELOG.txt
 	dh_installman -s $(CURDIR)/debian/man/*.1
 	dh_link -s
 	dh_strip -s
