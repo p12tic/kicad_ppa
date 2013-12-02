@@ -8,13 +8,13 @@ kicad (0.0.20130404-1) precise; urgency=low
 
 kicad (0.0.20101024-1) unstable; urgency=low
 
-  * Maintainer change. 
+  * Maintainer change.
     - Closes: #599427
   * changed the way sources are downloaded. See debian/packagesrc.sh
-  * upgraded to newest stable release. 
+  * upgraded to newest stable release.
     - Closes: #590483
     - Closes: #580497
-  * moved the dependency on extra-xdg-menus to Suggests: level. 
+  * moved the dependency on extra-xdg-menus to Suggests: level.
     - Closes: #577282
   * added a list of auto-generated files to remove upon clean target
 
